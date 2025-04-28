@@ -28,16 +28,16 @@ app.post("/api/fileanalyse", upload.single("upfile"), (req, res) => {
   // Extract the file's metadata
 
   const file = req.file;
-  const fileName = file.originalname; // we get the original name of the file
-  const fileType = file.mimetype; // we get the MIME type (file type)
-  const fileSize = file.size; // we get the size in bytes
+  const name = file.originalname; // we get the original name of the file
+  const type = file.mimetype; // we get the MIME type (file type)
+  const size = file.size; // we get the size in bytes
 
   // Respond with the file metadata
 
   return res.status(200).json({
-    fileName,
-    fileType,
-    fileSize,
+    name,
+    type,
+    size,
   });
 });
 
